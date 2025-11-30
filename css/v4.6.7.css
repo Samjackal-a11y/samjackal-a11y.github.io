@@ -1,0 +1,66 @@
+:root {
+  --fg: #1a1a1a;
+  --bg: #ffffff;
+  --accent: #005fcc;
+  --muted: #666666;
+  --card-bg: #f6f8fa;
+  --border: #d0d7de;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.skip-link {
+  position: absolute; left: -999px; top: -999px;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem;
+  background: #fffbcc; color: #000;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--accent);
+}
+
+header, main, footer { padding: 1rem; max-width: 72rem; margin: 0 auto; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.gallery-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+figure { margin: 0; }
+img { width: 100%; height: auto; display: block; }
+figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; }
+
+.form-field { margin-block: 0.75rem; }
+label { display: inline-block; margin-bottom: 0.25rem; }
+input, select, button {
+  font: inherit; padding: 0.5rem;
+  border: 1px solid var(--border); border-radius: 6px; background: #fff;
+}
+
+button { cursor: pointer; }
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Color mode variants */
+.mode-high-contrast {
+  --fg: #000; --bg: #fff; --accent: #000;
+  --card-bg: #fff; --border: #000; --muted: #000;
+}
+.mode-dim {
+  --fg: #e6e6e6; --bg: #121212; --accent: #66b2ff;
+  --card-bg: #1e1e1e; --border: #333; --muted: #b3b3b3;
+}
